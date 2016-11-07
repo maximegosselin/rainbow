@@ -23,7 +23,33 @@ $ composer require maximegosselin/rainbow
 
 ## Documentation
 
-TODO
+For an introduction to the middleware concept, [read this](http://www.slimframework.com/docs/concepts/middleware.html).
+
+Declare middleware stack with core logic:
+```php
+$stack = new MiddlewareStack(function($in, $out) {
+    // Core logic...
+});
+```
+
+Push middleware to the stack:
+```php 
+$stack->push(function($in, $out, callable $next) {
+    
+    /* 'before' logic goes here... */
+    
+    $out = $next($in, $out);
+    
+    /* 'after' logic goes here... */
+    
+    return $out;
+});
+```
+
+Call the stack with an inbound value and fetch the outbound value:
+```php
+$out = $stack->call('foo');
+```
 
 
 

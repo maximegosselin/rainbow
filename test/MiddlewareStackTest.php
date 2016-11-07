@@ -19,19 +19,19 @@ class MiddlewareStackTest extends \PHPUnit_Framework_TestCase
 
     public function testLastMiddlewarePushedIsFirstCalled()
     {
-        $mw1 = function($in, $out, $next) {
+        $mw1 = function ($in, $out, $next) {
             $out .= 'mw1';
 
             return $next($in, $out);
         };
 
-        $mw2 = function($in, $out, $next) {
+        $mw2 = function ($in, $out, $next) {
             $out .= 'mw2';
 
             return $next($in, $out);
         };
 
-        $mw3 = function($in, $out, $next) {
+        $mw3 = function ($in, $out, $next) {
             $out .= 'mw3';
 
             return $next($in, $out);

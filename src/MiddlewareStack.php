@@ -32,9 +32,9 @@ class MiddlewareStack implements MiddlewareStackInterface
     {
         $this->stack = new SplStack;
         $this->stack->setIteratorMode(SplDoublyLinkedList::IT_MODE_LIFO | SplDoublyLinkedList::IT_MODE_KEEP);
-        $this->stack[] = $core ?? function($in, $out) {
+        $this->stack[] = $core ?? function ($in, $out) {
                 return $out;
-            };
+        };
 
         $this->isCalled = false;
     }
@@ -46,7 +46,7 @@ class MiddlewareStack implements MiddlewareStackInterface
         }
 
         $next = $this->stack->top();
-        $this->stack[] = function($in, $out) use ($middleware, $next) {
+        $this->stack[] = function ($in, $out) use ($middleware, $next) {
             $result = call_user_func($middleware, $in, $out, $next);
 
             return $result;
