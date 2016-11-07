@@ -17,7 +17,7 @@ class MiddlewareStackTest extends \PHPUnit_Framework_TestCase
         $this->stack = new MiddlewareStack();
     }
 
-    public function testMiddlewaresAreCalledFromLastPushedToFirst()
+    public function testLastMiddlewarePushedIsFirstCalled()
     {
         $mw1 = function($in, $out, $next) {
             $out .= 'mw1';

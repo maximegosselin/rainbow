@@ -15,5 +15,5 @@ interface MiddlewareStackInterface
      * @param mixed $out
      * @return mixed
      */
-    public function call($in, $out = null);
+    public function call($in = null, $out = null);
 }
