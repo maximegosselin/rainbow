@@ -5,7 +5,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 
-*Rainbow* is a general-purpose middleware stack.
+*Rainbow* is a general-purpose middleware stack to wrap *before* and *after* logic around any process.
 
 
 ## System Requirements
@@ -28,10 +28,10 @@ $ composer require maximegosselin/rainbow
 
 For an introduction to the middleware concept, [read this](http://www.slimframework.com/docs/concepts/middleware.html).
 
-Declare middleware stack with core logic:
+Declare middleware stack with core process:
 ```php
 $stack = new MiddlewareStack(function($in, $out) {
-    // Core logic...
+    // Core process...
 });
 ```
 
