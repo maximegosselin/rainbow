@@ -1,6 +1,9 @@
 # Rainbow
 
+[![Latest Version](https://img.shields.io/github/release/maximegosselin/rainbow.svg)](https://github.com/maximegosselin/rainbow/releases)
+[![Build Status](https://img.shields.io/travis/maximegosselin/rainbow.svg)](https://travis-ci.org/maximegosselin/rainbow)
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 
 *Rainbow* is a general-purpose middleware stack.
 
