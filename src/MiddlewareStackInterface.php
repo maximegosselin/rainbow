@@ -1,14 +1,15 @@
 <?php
 declare(strict_types = 1);
+
 namespace MaximeGosselin\Rainbow;
 
 interface MiddlewareStackInterface
 {
     /**
-     * @param callable|MiddlewareInterface $middleware
+     * @param callable $middleware
      * @return MiddlewareStackInterface
      */
-    public function push(callable $middleware):MiddlewareStackInterface;
+    public function push(callable $middleware): MiddlewareStackInterface;
 
     /**
      * @param mixed $in

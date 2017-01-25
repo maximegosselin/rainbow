@@ -1,5 +1,6 @@
 <?php
 declare(strict_types = 1);
+
 namespace MaximeGosselin\Rainbow\Test;
 
 use MaximeGosselin\Rainbow\MiddlewareStack;

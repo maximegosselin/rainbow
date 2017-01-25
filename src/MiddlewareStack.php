@@ -1,5 +1,6 @@
 <?php
 declare(strict_types = 1);
+
 namespace MaximeGosselin\Rainbow;
 
 use RuntimeException;
@@ -18,16 +19,6 @@ class MiddlewareStack implements MiddlewareStackInterface
      */
     private $isCalled;
 
-    /**
-     * @var callable
-     */
-    private $inboundAssertionCallback;
-
-    /**
-     * @var callable
-     */
-    private $outboundAssertionCallback;
-
     public function __construct(callable $core = null)
     {
         $this->stack = new SplStack;
@@ -39,7 +30,7 @@ class MiddlewareStack implements MiddlewareStackInterface
         $this->isCalled = false;
     }
 
-    public function push(callable $middleware):MiddlewareStackInterface
+    public function push(callable $middleware): MiddlewareStackInterface
     {
         if ($this->isCalled) {
             throw new RuntimeException('Cannot push middleware while stack is beeing called.');
